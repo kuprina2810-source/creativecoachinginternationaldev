@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event — Creative Coaching International</title>
+<meta name="description" content="Event details — Creative Coaching International">
+<link rel="stylesheet" href="cci-styles.css">
+<style>
+.ev-detail { max-width:1220px; margin:0 auto; padding:clamp(24px,4vw,56px) clamp(16px,4vw,64px); }
+.ev-detail__back { display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); text-decoration:none; margin-bottom:32px; }
+.ev-detail__back:hover { color:var(--forest); }
+.ev-detail__grid { display:grid; grid-template-columns:.95fr 1fr; gap:clamp(32px,4vw,64px); align-items:start; }
+.ev-detail__media { position:sticky; top:100px; }
+.ev-detail__img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:24px; box-shadow:var(--sh-img); background:var(--sand); display:flex; align-items:center; justify-content:center; color:var(--muted); }
+.ev-detail__date-badge { margin-top:18px; background:var(--forest); color:var(--cream); border-radius:16px; padding:14px 20px; display:flex; align-items:center; gap:16px; }
+.ev-detail__badge-month { font-size:12px; text-transform:uppercase; letter-spacing:.18em; opacity:.6; }
+.ev-detail__badge-day { font-family:var(--serif); font-size:36px; font-weight:400; line-height:1; }
+.ev-detail__badge-info { border-left:1px solid rgba(250,246,238,.15); padding-left:16px; }
+.ev-detail__badge-time { font-size:14px; opacity:.8; }
+.ev-detail__badge-loc { font-size:13px; opacity:.55; margin-top:2px; }
+.ev-detail__copy { animation:rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.ev-detail__meta { display:flex; flex-direction:column; gap:8px; margin:18px 0 24px; padding:18px; background:var(--cream2); border-radius:14px; }
+.ev-detail__meta-row { display:flex; align-items:center; gap:10px; font-size:15px; color:var(--ink); }
+.ev-detail__meta-icon { font-size:17px; color:var(--muted); width:20px; text-align:center; flex-shrink:0; }
+.ev-detail__price-box { background:var(--forest); color:var(--cream); border-radius:20px; padding:24px; margin-bottom:28px; }
+.ev-detail__price-label { font-size:12px; text-transform:uppercase; letter-spacing:.18em; opacity:.6; margin-bottom:6px; }
+.ev-detail__price-value { font-family:var(--serif); font-size:38px; font-weight:400; margin-bottom:16px; }
+.ev-detail__buy-btn { display:block; width:100%; padding:16px; background:var(--clay); color:var(--forest); text-align:center; border-radius:12px; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 8px 20px -8px rgba(0,0,0,.4); }
+.ev-detail__buy-btn:hover { opacity:.9; }
+.ev-detail__lock { font-size:12px; opacity:.55; text-align:center; margin-top:8px; }
+.ev-detail__includes { margin-top:24px; }
+.ev-detail__includes h3 { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:12px; }
+.ev-detail__includes ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.ev-detail__includes li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--muted); }
+.ev-detail__includes li::before { content:"✓"; color:var(--gold); flex-shrink:0; margin-top:1px; }
+.ev-more { background:var(--cream2); padding:clamp(48px,6vw,80px) clamp(16px,4vw,64px); }
+.ev-more__inner { max-width:1220px; margin:0 auto; }
+.ev-more__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
+.ev-notfound { min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 20px; gap:16px; }
+@media (max-width:960px) {
+  .ev-detail__grid { grid-template-columns:1fr; }
+  .ev-detail__media { position:static; }
+  .ev-detail__img { max-width:480px; aspect-ratio:4/3; }
+  .ev-more__grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px) {
+  .ev-more__grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="Creative Coaching International home">
+      <img src="images/creative-coaching-international-logo.png" alt="" class="site-header__logo-img" width="56" height="56">
+      <div class="site-header__logo-text">
+        <span class="site-header__logo-name">Creative Coaching</span>
+        <span class="site-header__logo-sub">International</span>
+      </div>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          About <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
+          <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
+          <a href="about.html#career"   class="dropdown__item" role="menuitem">Career</a>
+          <a href="about.html#mission"  class="dropdown__item" role="menuitem">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
+          <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
+          <a href="relationships.html"  class="dropdown__item" role="menuitem">Relationships</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link active" aria-haspopup="true" aria-expanded="false">
+          Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
+          <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
+          <a href="events.html#offerings" class="dropdown__item" role="menuitem">Ways to Gather</a>
+          <a href="events.html#past"      class="dropdown__item" role="menuitem">Past Events</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html"      class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-dark site-header__cta">Free consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__brand">Creative Coaching</span>
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-menu__nav">
+    <a href="index.html"         class="mobile-menu__link">Home</a>
+    <a href="about.html"         class="mobile-menu__link">About</a>
+    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
+    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+  </nav>
+  <a href="events.html#book" class="mobile-menu__cta">Browse all events</a>
+</div>
+
+<main id="eventDetail"></main>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image lightbox"><button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button><img class="lightbox-img" id="lightboxImg" src="" alt=""></div>
+<script src="cci-main.js"></script>
+<script>
+(function () {
+  var EVENTS = [
+    {
+      slug: 'calm-your-body-heal-your-mind',
+      img: '',
+      month: 'Aug', day: '18',
+      cat: 'Reiki · Healing',
+      title: 'Calm Your Body, Heal Your Mind',
+      when: '6:30–7:30 PM',
+      date: 'Tuesday, August 18, 2026',
+      location: 'SuperJuice, Wyckoff, NJ',
+      price: '$40',
+      includes: [
+        'Introduction to Reiki',
+        'Guided trauma &amp; healing session',
+        'Group lesson — all welcome',
+        'Option to book private sessions'
+      ],
+      desc: 'Learn about Reiki and understand more about how to heal trauma and old wounds. Many of our past participants come to heal for various reasons — all are welcome. This is a group lesson, with opportunities to book private sessions at later times.'
+    },
+    {
+      slug: 'find-your-focus',
+      img: 'find-your-focus-relax-retreat.jpeg',
+      month: 'Jun', day: '20',
+      cat: 'Wine · Wellness',
+      title: 'Find Your Focus &amp; Relax',
+      when: '1:00–4:00 PM',
+      date: 'Saturday, June 20',
+      location: 'Forked River Sailing Charter, NJ',
+      price: '$225',
+      includes: [
+        'Guided wine sampling',
+        'Relaxation &amp; meditation session',
+        'Coaching conversation with Christine',
+        'Light refreshments aboard'
+      ],
+      desc: 'Set sail for an afternoon of wine sampling, gentle relaxation, and meaningful conversation with Christine about wellness and living with intention. A restorative day on the water.'
+    },
+    {
+      slug: 'wellness-on-a-boat',
+      img: 'wellness-for-women-boat-event.jpeg',
+      month: 'Jun', day: '13',
+      cat: 'On the water',
+      title: 'Wellness for Women — On a Boat!',
+      when: '1:00–4:00 PM',
+      date: 'Saturday, June 13',
+      location: 'Aboard a private charter, NJ',
+      price: '$200',
+      includes: [
+        'Breathwork &amp; guided reset',
+        'Women-only circle',
+        'Connection activities',
+        'Refreshments aboard'
+      ],
+      desc: 'A women-only afternoon on the water — breathwork, connection, and space to reset among a supportive circle of women on the journey.'
+    },
+    {
+      slug: 'wyckoff-wellness',
+      img: 'wyckoff-health-wellness-event.jpeg',
+      month: 'Jun', day: '06',
+      cat: 'Health &amp; Wellness',
+      title: 'Wyckoff Health &amp; Wellness Event',
+      when: '10:00 AM–2:00 PM',
+      date: 'Saturday, June 6',
+      location: 'Wyckoff, NJ',
+      price: '$40',
+      includes: [
+        'Wellness talks',
+        'Group movement',
+        'Practical take-home tools',
+        'Community connection'
+      ],
+      desc: 'A community wellness gathering — talks, movement, and practical tools for caring for your whole self, body and mind.'
+    },
+    {
+      slug: 'mindset-through-dance',
+      img: 'motivation-mindset-dance-event.jpeg',
+      month: 'May', day: '09',
+      cat: 'Motivation · Movement',
+      title: 'Motivation &amp; Mindset Through Dance',
+      when: '1:00–2:00 PM',
+      date: 'Saturday, May 9',
+      location: 'Saucy Studios',
+      price: '$20',
+      includes: [
+        'Guided dance session',
+        'Energy &amp; mindset coaching',
+        'All levels welcome',
+        'Water provided'
+      ],
+      desc: 'Move, sweat, and shift your mindset. An hour of guided dance built to lift your energy and reconnect motivation with joy.'
+    }
+  ];
+
+  var params = new URLSearchParams(location.search);
+  var slug = params.get('e');
+  var ev = EVENTS.find(function(e){ return e.slug === slug; });
+  var main = document.getElementById('eventDetail');
+
+  if (!ev) {
+    document.title = 'Event Not Found · Creative Coaching International';
+    main.innerHTML = '<div class="ev-notfound"><p style="font-size:48px;">&#128591;</p><h1 style="font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:var(--forest);">Event not found.</h1><p style="color:var(--muted);font-size:16px;">That event may have passed or the link may be incorrect.</p><a href="events.html" style="margin-top:8px;" class="btn btn-dark">Browse all events →</a></div>';
+    return;
+  }
+
+  document.title = ev.title.replace(/&amp;/g, '&') + ' · Creative Coaching International';
+
+  var others = EVENTS.filter(function(e){ return e.slug !== ev.slug; }).slice(0, 3);
+  var othersHtml = others.map(function(o){
+    return '<a href="event.html?e=' + o.slug + '" style="background:var(--cream);border:1px solid rgba(22,39,63,.08);border-radius:16px;overflow:hidden;text-decoration:none;display:block;">'
+      + (o.img ? '<img src="images/' + o.img + '" alt="' + o.title + '" style="width:100%;aspect-ratio:16/9;object-fit:cover;">' : '<div style="width:100%;aspect-ratio:16/9;background:var(--sand);"></div>')
+      + '<div style="padding:16px;">'
+      + '<p style="font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:4px;">' + o.cat + '</p>'
+      + '<h3 style="font-size:16px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:6px;">' + o.title + '</h3>'
+      + '<p style="font-size:13px;color:var(--muted);">◈ ' + o.date + '</p>'
+      + '<p style="font-size:14px;font-weight:700;color:var(--forest);margin-top:6px;">' + o.price + '</p>'
+      + '</div></a>';
+  }).join('');
+
+  var imgHtml = ev.img
+    ? '<img src="images/' + ev.img + '" alt="' + ev.title + '" class="ev-detail__img" style="display:block;">'
+    : '<div class="ev-detail__img"><span style="font-size:48px;">📅</span></div>';
+
+  var includesHtml = ev.includes.map(function(i){ return '<li>' + i + '</li>'; }).join('');
+
+  main.innerHTML = '<div class="ev-detail">'
+    + '<a href="events.html" class="ev-detail__back">← All events</a>'
+    + '<div class="ev-detail__grid">'
+    + '<div class="ev-detail__media">'
+    + imgHtml
+    + '<div class="ev-detail__date-badge">'
+    + '<div><div class="ev-detail__badge-month">' + ev.month + '</div><div class="ev-detail__badge-day">' + ev.day + '</div></div>'
+    + '<div class="ev-detail__badge-info"><div class="ev-detail__badge-time">◷ ' + ev.when + '</div><div class="ev-detail__badge-loc">⌖ ' + ev.location + '</div></div>'
+    + '</div></div>'
+    + '<div class="ev-detail__copy">'
+    + '<p style="font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:12px;">' + ev.cat + '</p>'
+    + '<h1 style="font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.5vw,44px);line-height:1.1;letter-spacing:-.02em;color:var(--forest);margin-bottom:20px;">' + ev.title + '</h1>'
+    + '<div class="ev-detail__meta" role="list">'
+    + '<div class="ev-detail__meta-row" role="listitem"><span class="ev-detail__meta-icon">◈</span><span>' + ev.date + '</span></div>'
+    + '<div class="ev-detail__meta-row" role="listitem"><span class="ev-detail__meta-icon">◷</span><span>' + ev.when + '</span></div>'
+    + '<div class="ev-detail__meta-row" role="listitem"><span class="ev-detail__meta-icon">⌖</span><span>' + ev.location + '</span></div>'
+    + '</div>'
+    + '<p style="font-size:16px;line-height:1.7;color:var(--muted);margin-bottom:24px;">' + ev.desc + '</p>'
+    + '<div class="ev-detail__price-box">'
+    + '<p class="ev-detail__price-label">Price per person</p>'
+    + '<p class="ev-detail__price-value">' + ev.price + '</p>'
+    + '<a href="contact.html?ev=' + ev.slug + '" class="ev-detail__buy-btn">Buy now →</a>'
+    + '<p class="ev-detail__lock">🔒 Secure checkout · Tickets are non-refundable</p>'
+    + '</div>'
+    + '<div class="ev-detail__includes"><h3>What\'s included</h3><ul>' + includesHtml + '</ul></div>'
+    + '</div></div></div>'
+    + '<div class="ev-more"><div class="ev-more__inner">'
+    + '<p class="eyebrow" style="margin-bottom:12px;">More upcoming events</p>'
+    + '<h2 class="h-section">Other experiences to <em class="h-em">explore</em>.</h2>'
+    + '<div class="ev-more__grid">' + othersHtml + '</div>'
+    + '</div></div>';
+})();
+</script>
+</body>
+</html>

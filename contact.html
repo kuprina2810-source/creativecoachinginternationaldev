@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Creative Coaching International</title>
+<meta name="description" content="Get in touch with Christine. Every journey starts with a simple, no-pressure conversation — I read every message myself.">
+<meta property="og:title" content="Contact — Creative Coaching International">
+<meta property="og:image" content="images/womens-life-coaching-support.jpeg">
+<link rel="stylesheet" href="cci-styles.css">
+<style>
+/* Page hero overrides — larger banner (Contact prototype) */
+.page-hero { min-height: clamp(300px,44vh,480px); }
+.page-hero__overlay { background: linear-gradient(180deg,rgba(15,30,54,.5),rgba(15,30,54,.74)); }
+.page-hero__body { max-width: 860px; padding: clamp(52px,7vw,90px) clamp(20px,5vw,64px); }
+.page-hero__title { font-size: clamp(42px,5.8vw,76px); }
+.contact-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(32px,4vw,56px); align-items:start; }
+.contact-form-card { background:#fff; border:1px solid rgba(22,39,63,.08); border-radius:24px; padding:clamp(28px,4vw,44px); box-shadow:0 4px 24px -6px rgba(22,39,63,.07); }
+.contact-form-card h2 { font-family:var(--serif); font-size:clamp(22px,2.5vw,30px); font-weight:400; color:var(--forest); margin-bottom:24px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+.form-label { font-size:13px; font-weight:600; color:var(--ink); }
+.form-input, .form-select, .form-textarea { width:100%; padding:12px 14px; border:1.5px solid rgba(22,39,63,.12); border-radius:10px; font-family:var(--sans); font-size:15px; color:var(--ink); background:#fff; box-sizing:border-box; transition:border-color .2s; -webkit-appearance:none; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline:none; border-color:var(--forest); }
+.form-textarea { resize:vertical; min-height:110px; }
+.form-submit { width:100%; padding:16px; background:var(--forest); color:var(--cream); border:none; border-radius:12px; font-family:var(--sans); font-size:16px; font-weight:600; cursor:pointer; margin-top:4px; }
+.form-submit:hover { background:var(--olive); }
+.contact-success { display:none; flex-direction:column; align-items:center; gap:14px; text-align:center; padding:32px 0; }
+.contact-success__icon { font-size:40px; width:60px; height:60px; border-radius:50%; background:rgba(22,39,63,.06); display:flex; align-items:center; justify-content:center; }
+.contact-success__title { font-family:var(--serif); font-size:22px; color:var(--forest); }
+.contact-success__body { font-size:15px; color:var(--muted); line-height:1.6; }
+.info-col { display:flex; flex-direction:column; gap:18px; }
+.info-dark-card { background:var(--forest); border-radius:20px; padding:24px; color:var(--cream); }
+.info-dark-card__title { font-size:12px; text-transform:uppercase; letter-spacing:.18em; opacity:.5; margin-bottom:14px; }
+.info-item { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+.info-item:last-child { margin-bottom:0; }
+.info-item__icon { font-size:17px; opacity:.6; flex-shrink:0; padding-top:1px; }
+.info-item__label { font-size:12px; opacity:.5; text-transform:uppercase; letter-spacing:.14em; margin-bottom:3px; }
+.info-item__val { font-size:15px; }
+.expect-card { background:var(--cream2); border-radius:20px; padding:24px; }
+.expect-card__title { font-size:14px; font-weight:700; color:var(--ink); margin-bottom:12px; }
+.expect-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.expect-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--muted); line-height:1.5; }
+.expect-list li::before { content:"✓"; color:var(--gold); flex-shrink:0; }
+.faq-section { background:var(--cream2); border-top:1px solid rgba(38,50,42,.08); border-bottom:1px solid rgba(38,50,42,.08); }
+.faq-list { max-width:760px; margin:40px auto 0; display:flex; flex-direction:column; gap:12px; }
+.faq-item { background:#fff; border:1px solid rgba(22,39,63,.08); border-radius:16px; overflow:hidden; }
+.faq-btn { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 22px; background:none; border:none; font-family:var(--serif); font-size:clamp(17px,1.6vw,20px); color:var(--ink); cursor:pointer; text-align:left; }
+.faq-btn__icon { font-size:22px; color:var(--olive); flex-shrink:0; transition:transform .2s; line-height:1; }
+.faq-btn[aria-expanded="true"] .faq-btn__icon { transform:rotate(45deg); }
+.faq-body { font-size:15px; line-height:1.6; color:var(--muted); padding:0 22px 22px; display:none; }
+.faq-item.open .faq-body { display:block; }
+@media (max-width:960px) { .contact-grid { grid-template-columns:1fr; } }
+@media (max-width:560px) { .form-row { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="Creative Coaching International home">
+      <img src="images/creative-coaching-international-logo.png" alt="" class="site-header__logo-img" width="56" height="56">
+      <div class="site-header__logo-text">
+        <span class="site-header__logo-name">Creative Coaching</span>
+        <span class="site-header__logo-sub">International</span>
+      </div>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          About <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
+          <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
+          <a href="about.html#career"   class="dropdown__item" role="menuitem">Career</a>
+          <a href="about.html#mission"  class="dropdown__item" role="menuitem">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
+          <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
+          <a href="relationships.html"  class="dropdown__item" role="menuitem">Relationships</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
+          <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
+          <a href="events.html#offerings" class="dropdown__item" role="menuitem">Ways to Gather</a>
+          <a href="events.html#past"      class="dropdown__item" role="menuitem">Past Events</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html"      class="nav-link active">Contact</a>
+    </nav>
+    <a href="#form" class="btn btn-dark site-header__cta">Send a message</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__brand">Creative Coaching</span>
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-menu__nav">
+    <a href="index.html"         class="mobile-menu__link">Home</a>
+    <a href="about.html"         class="mobile-menu__link">About</a>
+    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
+    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+  </nav>
+  <a href="#form" class="mobile-menu__cta">Send a message</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="images/womens-life-coaching-support.jpeg" alt="Contact Creative Coaching International" class="page-hero__img">
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__body">
+    <p class="eyebrow page-hero__eyebrow eyebrow--light">Get in touch</p>
+    <h1 class="page-hero__title">Let's start a <em style="color:var(--clay2);font-style:italic;">conversation</em>.</h1>
+    <p class="page-hero__sub">Whether you're ready to begin or just exploring, reach out. Every journey starts with a simple, no-pressure conversation — and I read every message myself.</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section id="form" class="section-pad" style="background:var(--cream);" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-card">
+        <h2>Send a message</h2>
+        <div id="contactFormWrap">
+          <form id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First name <span aria-hidden="true">*</span></label>
+                <input type="text" id="firstName" name="firstName" class="form-input" required autocomplete="given-name" placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last name</label>
+                <input type="text" id="lastName" name="lastName" class="form-input" autocomplete="family-name" placeholder="Your last name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" placeholder="Optional">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interest">I'm interested in</label>
+              <select id="interest" name="interest" class="form-select">
+                <option value="">Not sure yet — let's talk</option>
+                <option value="wellness">Wellness &amp; Vitality</option>
+                <option value="career">Career &amp; Purpose</option>
+                <option value="relationships">Relationships</option>
+                <option value="mindset">Mindset &amp; Resilience</option>
+                <option value="retreats">Retreats</option>
+                <option value="org">Organizational partnership</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" class="form-textarea" required placeholder="Tell me a little about where you are and what you're hoping for…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send message →</button>
+          </form>
+        </div>
+        <div class="contact-success" id="formSuccess" aria-live="polite" style="display:none;">
+          <div class="contact-success__icon" aria-hidden="true">✓</div>
+          <p class="contact-success__title">Thank you — message sent.</p>
+          <p class="contact-success__body">I'll get back to you within one business day. In the meantime, feel free to explore the coaching pillars.</p>
+          <a href="index.html#services" class="btn btn-dark" style="margin-top:4px;">Explore coaching →</a>
+        </div>
+      </div>
+
+      <!-- INFO COLUMN -->
+      <div class="info-col">
+        <div class="info-dark-card">
+          <p class="info-dark-card__title">Connect</p>
+          <div class="info-item">
+            <span class="info-item__icon">☎</span>
+            <div>
+              <div class="info-item__label">Phone</div>
+              <div class="info-item__val"><a href="tel:+12018887807" style="color:inherit;text-decoration:none;">201-888-7807</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon">◐</span>
+            <div>
+              <div class="info-item__label">Sessions</div>
+              <div class="info-item__val">Virtual &amp; in person</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon">◷</span>
+            <div>
+              <div class="info-item__label">Hours</div>
+              <div class="info-item__val">Mon–Fri · 9am–5pm ET</div>
+            </div>
+          </div>
+          <div class="info-item" style="margin-top:6px;">
+            <span class="info-item__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <div>
+              <div class="info-item__label">Instagram</div>
+              <div class="info-item__val"><a href="https://www.instagram.com/creativecoachinginternational/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">@creativecoachinginternational</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expect-card">
+          <p class="expect-card__title">What to expect</p>
+          <ul class="expect-list">
+            <li>A personal reply within one business day.</li>
+            <li>A free 15-minute discovery call to explore fit.</li>
+            <li>A warm, judgment-free space — no pressure to commit.</li>
+          </ul>
+        </div>
+
+        <div class="info-dark-card">
+          <p class="info-dark-card__title">Offices</p>
+          <div class="info-item">
+            <span class="info-item__icon">⌖</span>
+            <div class="info-item__val" style="font-size:14px;line-height:1.5;">385 Ocean Ave.<br>Long Branch, NJ 07740</div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon">⌖</span>
+            <div class="info-item__val" style="font-size:14px;line-height:1.5;">1266 E Main St, Suite 700R<br>Stamford, CT 06902</div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon">⌖</span>
+            <div class="info-item__val" style="font-size:14px;line-height:1.5;">1 Park Ave.<br>New York, NY 10016</div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon">⌖</span>
+            <div class="info-item__val" style="font-size:14px;line-height:1.5;">1000 Wyckoff Ave, 3rd Floor<br>Mahwah, NJ 07430</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" aria-labelledby="faq-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="eyebrow" style="margin-bottom:12px;">Good to know</p>
+      <h2 class="h-section" id="faq-heading">Common questions.</h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq1-body">
+          Do you offer virtual sessions?
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" id="faq1-body" role="region">
+          Yes — most coaching happens over video, so we can work together wherever you are. In-person sessions and retreats are also available.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq2-body">
+          What happens on the free consultation?
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" id="faq2-body" role="region">
+          It's a relaxed 15-minute call to hear where you are, answer your questions, and see whether we're a good fit. No prep and no pressure.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq3-body">
+          Is this only about weight loss?
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" id="faq3-body" role="region">
+          Not at all. Weight and lifestyle coaching is one part of a whole-person approach that also spans career, relationships, and mindset — we start wherever matters most to you.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq4-body">
+          Do you work with organizations?
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body" id="faq4-body" role="region">
+          Yes. I partner with schools, municipalities, and teams to bring whole-person wellbeing programs, workshops, and retreats to groups.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <div class="site-footer__logo">
+        <img src="images/creative-coaching-international-logo-white.png" alt="Creative Coaching International logo" class="site-footer__logo-img" width="60" height="60">
+        <div class="site-footer__logo-text">
+          <span class="site-footer__logo-name">Creative Coaching</span>
+          <span class="site-footer__logo-sub">International</span>
+        </div>
+      </div>
+      <p class="site-footer__tagline">Whole-person coaching for women, teams, and communities — body, mind, career, and connection.</p>
+      <a href="https://www.instagram.com/creativecoachinginternational/" target="_blank" rel="noopener" class="site-footer__ig-btn" aria-label="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Services &amp; Events</p>
+      <ul class="site-footer__col-links">
+        <li><a href="wellness.html"      class="site-footer__link">Wellness &amp; Fitness</a></li>
+        <li><a href="schools.html"       class="site-footer__link">Municipalities &amp; Schools</a></li>
+        <li><a href="relationships.html" class="site-footer__link">Relationships</a></li>
+        <li><a href="events.html"        class="site-footer__link">Events &amp; Retreats</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Quick Links</p>
+      <ul class="site-footer__col-links">
+        <li><a href="about.html"        class="site-footer__link">About</a></li>
+        <li><a href="testimonials.html" class="site-footer__link">Testimonials</a></li>
+        <li><a href="contact.html"      class="site-footer__link">Contact</a></li>
+        <li><a href="terms.html"        class="site-footer__link">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Connect</p>
+      <a href="tel:+12018887807" class="site-footer__phone-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        201-888-7807
+      </a>
+      <p class="site-footer__connect-info">Call to get started — virtual &amp; in person, nationwide.</p>
+    </div>
+  </div>
+  <div class="site-footer__offices">
+    <p class="site-footer__offices-label">Offices</p>
+    <div class="site-footer__offices-grid">
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>385 Ocean Ave.<br>Long Branch, NJ 07740</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1266 E Main St, Suite 700R<br>Stamford, CT 06902</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1 Park Ave.<br>New York, NY 10016</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1000 Wyckoff Ave, 3rd Floor<br>Mahwah, NJ 07430</span></div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p class="site-footer__copy">&copy; 2026 Creative Coaching International. All rights reserved.</p>
+    <span style="display:inline-flex;align-items:center;gap:16px;">
+      <a href="terms.html" class="site-footer__terms">Terms of Service</a>
+      <span style="opacity:.5;font-size:13px;">Coaching · Retreats · Wellbeing partnerships</span>
+    </span>
+  </div>
+</footer>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image lightbox"><button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button><img class="lightbox-img" id="lightboxImg" src="" alt=""></div>
+<script src="cci-main.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Creative Coaching International</title>
+<meta name="description" content="Event terms and conditions for tickets, attendance, and participation at Creative Coaching International events.">
+<meta property="og:title" content="Terms of Service — Creative Coaching International">
+<link rel="stylesheet" href="cci-styles.css">
+<style>
+/* Page hero overrides — shorter/darker banner (Terms prototype) */
+.page-hero { min-height: clamp(260px,36vh,400px); }
+.page-hero__overlay { background: linear-gradient(180deg,rgba(15,30,54,.6),rgba(15,30,54,.76)); }
+.page-hero__body { padding: clamp(44px,7vw,76px) clamp(20px,5vw,64px); }
+.page-hero__title { font-size: clamp(38px,5.2vw,66px); }
+.terms-body { max-width:760px; margin:0 auto; }
+.terms-intro { font-size:16px; color:var(--muted); line-height:1.7; margin-bottom:48px; padding-bottom:24px; border-bottom:1px solid rgba(22,39,63,.08); }
+.terms-section { display:flex; gap:22px; align-items:flex-start; padding:28px 0; border-bottom:1px solid rgba(22,39,63,.06); }
+.terms-section:last-of-type { border-bottom:none; }
+.terms-num { width:42px; height:42px; min-width:42px; border-radius:50%; border:1.5px solid var(--gold); background:transparent; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-size:15px; color:var(--forest); flex-shrink:0; margin-top:3px; }
+.terms-section__content { flex:1; }
+.terms-section__title { font-size:17px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.terms-section__body { font-size:15px; line-height:1.7; color:var(--muted); }
+.terms-contact-card { background:var(--cream2); border-radius:20px; padding:28px; margin-top:48px; display:flex; flex-direction:column; gap:14px; }
+.terms-contact-card__title { font-size:17px; font-weight:700; color:var(--ink); }
+.terms-contact-card__body { font-size:15px; color:var(--muted); }
+.terms-contact-card__links { display:flex; gap:14px; flex-wrap:wrap; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="Creative Coaching International home">
+      <img src="images/creative-coaching-international-logo.png" alt="" class="site-header__logo-img" width="56" height="56">
+      <div class="site-header__logo-text">
+        <span class="site-header__logo-name">Creative Coaching</span>
+        <span class="site-header__logo-sub">International</span>
+      </div>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          About <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
+          <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
+          <a href="about.html#career"   class="dropdown__item" role="menuitem">Career</a>
+          <a href="about.html#mission"  class="dropdown__item" role="menuitem">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
+          <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
+          <a href="relationships.html"  class="dropdown__item" role="menuitem">Relationships</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
+          <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
+          <a href="events.html#offerings" class="dropdown__item" role="menuitem">Ways to Gather</a>
+          <a href="events.html#past"      class="dropdown__item" role="menuitem">Past Events</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html"      class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-dark site-header__cta">Free consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__brand">Creative Coaching</span>
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-menu__nav">
+    <a href="index.html"         class="mobile-menu__link">Home</a>
+    <a href="about.html"         class="mobile-menu__link">About</a>
+    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
+    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+  </nav>
+  <a href="contact.html" class="mobile-menu__cta">Book a free 15-min consultation</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="images/womens-life-coaching-support.jpeg" alt="Terms of Service" class="page-hero__img">
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__body">
+    <p class="eyebrow page-hero__eyebrow eyebrow--light">Legal</p>
+    <h1 class="page-hero__title">Terms of Service</h1>
+    <p class="page-hero__sub">Event terms &amp; conditions for tickets, attendance, and participation.</p>
+  </div>
+</div>
+
+<!-- TERMS CONTENT -->
+<section class="section-pad" style="background:var(--cream);" aria-labelledby="terms-heading">
+  <div class="container">
+    <div class="terms-body">
+      <h2 class="h-section sr-only" id="terms-heading">Terms of Service</h2>
+      <p class="terms-intro">By purchasing a ticket and attending any of our events, you agree to the following terms and conditions.</p>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 1">1</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Ticket Purchase &amp; Entry</h3>
+          <p class="terms-section__body">All ticket sales are final. Tickets are non-refundable and non-transferable unless otherwise stated. Entry is only permitted with a valid ticket, and event organizers reserve the right to refuse entry at their discretion.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 2">2</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Event Changes</h3>
+          <p class="terms-section__body">Event details, including date, time, location, and programming, are subject to change. In the event of a cancellation, ticket holders may be offered a credit or rescheduled date at the organizer's discretion.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 3">3</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Health &amp; Safety</h3>
+          <p class="terms-section__body">Attendees participate in all activities (including but not limited to dance, meditation, and wellness sessions) at their own risk. By attending, you confirm that you are physically and mentally able to participate. Please consult a physician if you have any concerns.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 4">4</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Liability Waiver</h3>
+          <p class="terms-section__body">The event organizers, instructors, and venue are not responsible for any injuries, losses, or damages that may occur during or as a result of attending the event. Attendees assume full responsibility for their participation.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 5">5</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Alcohol Consumption</h3>
+          <p class="terms-section__body">For events that include alcohol (such as wine tastings), attendees must be 21 years of age or older and may be required to present valid ID. Please drink responsibly. The organizers reserve the right to refuse service to anyone at any time.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 6">6</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Code of Conduct</h3>
+          <p class="terms-section__body">We are committed to providing a safe, respectful, and inclusive environment. Any disruptive, unsafe, or inappropriate behavior may result in removal from the event without refund.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 7">7</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Media Release</h3>
+          <p class="terms-section__body">By attending, you grant permission for your image, likeness, or voice to be captured in photos or videos and used for promotional or marketing purposes without compensation.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 8">8</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Personal Belongings</h3>
+          <p class="terms-section__body">Attendees are responsible for their personal belongings. The event organizers are not liable for lost, stolen, or damaged items.</p>
+        </div>
+      </div>
+
+      <div class="terms-section">
+        <div class="terms-num" aria-label="Section 9">9</div>
+        <div class="terms-section__content">
+          <h3 class="terms-section__title">Contact Information</h3>
+          <p class="terms-section__body">By purchasing a ticket, you agree to receive event-related communications, including updates and reminders.</p>
+        </div>
+      </div>
+
+      <div class="terms-contact-card">
+        <h3 class="terms-contact-card__title">Questions about these terms?</h3>
+        <p class="terms-contact-card__body">Reach out any time and we'll be glad to help.</p>
+        <div class="terms-contact-card__links">
+          <a href="tel:+12018887807" class="btn btn-dark" style="font-size:14px;padding:12px 20px;">☎ 201-888-7807</a>
+          <a href="contact.html"     class="btn btn-outline" style="font-size:14px;padding:12px 20px;">Contact us →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <div class="site-footer__logo">
+        <img src="images/creative-coaching-international-logo-white.png" alt="Creative Coaching International logo" class="site-footer__logo-img" width="60" height="60">
+        <div class="site-footer__logo-text">
+          <span class="site-footer__logo-name">Creative Coaching</span>
+          <span class="site-footer__logo-sub">International</span>
+        </div>
+      </div>
+      <p class="site-footer__tagline">Whole-person coaching for women, teams, and communities — body, mind, career, and connection.</p>
+      <a href="https://www.instagram.com/creativecoachinginternational/" target="_blank" rel="noopener" class="site-footer__ig-btn" aria-label="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Services &amp; Events</p>
+      <ul class="site-footer__col-links">
+        <li><a href="wellness.html"      class="site-footer__link">Wellness &amp; Fitness</a></li>
+        <li><a href="schools.html"       class="site-footer__link">Municipalities &amp; Schools</a></li>
+        <li><a href="relationships.html" class="site-footer__link">Relationships</a></li>
+        <li><a href="events.html"        class="site-footer__link">Events &amp; Retreats</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Quick Links</p>
+      <ul class="site-footer__col-links">
+        <li><a href="about.html"        class="site-footer__link">About</a></li>
+        <li><a href="testimonials.html" class="site-footer__link">Testimonials</a></li>
+        <li><a href="contact.html"      class="site-footer__link">Contact</a></li>
+        <li><a href="terms.html"        class="site-footer__link">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Connect</p>
+      <a href="tel:+12018887807" class="site-footer__phone-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        201-888-7807
+      </a>
+      <p class="site-footer__connect-info">Call to get started — virtual &amp; in person, nationwide.</p>
+    </div>
+  </div>
+  <div class="site-footer__offices">
+    <p class="site-footer__offices-label">Offices</p>
+    <div class="site-footer__offices-grid">
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>385 Ocean Ave.<br>Long Branch, NJ 07740</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1266 E Main St, Suite 700R<br>Stamford, CT 06902</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1 Park Ave.<br>New York, NY 10016</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1000 Wyckoff Ave, 3rd Floor<br>Mahwah, NJ 07430</span></div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p class="site-footer__copy">&copy; 2026 Creative Coaching International. All rights reserved.</p>
+    <span style="display:inline-flex;align-items:center;gap:16px;">
+      <a href="terms.html" class="site-footer__terms">Terms of Service</a>
+      <span style="opacity:.5;font-size:13px;">Coaching · Retreats · Wellbeing partnerships</span>
+    </span>
+  </div>
+</footer>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image lightbox"><button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button><img class="lightbox-img" id="lightboxImg" src="" alt=""></div>
+<script src="cci-main.js"></script>
+</body>
+</html>

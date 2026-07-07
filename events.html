@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events &amp; Retreats — Creative Coaching International</title>
+<meta name="description" content="Gather and grow. Intimate retreats, workshops, and community gatherings designed to help you reconnect — with yourself and with other women on the journey.">
+<meta property="og:title" content="Events &amp; Retreats — Creative Coaching International">
+<meta property="og:image" content="images/womens-wellness-retreat-group.jpeg">
+<link rel="stylesheet" href="cci-styles.css">
+<style>
+/* Page hero overrides — larger banner (Events prototype) */
+.page-hero { min-height: clamp(300px,44vh,480px); }
+.page-hero__overlay { background: linear-gradient(180deg,rgba(15,30,54,.5),rgba(15,30,54,.74)); }
+.page-hero__body { max-width: 860px; padding: clamp(52px,7vw,90px) clamp(20px,5vw,64px); }
+.page-hero__title { font-size: clamp(42px,5.8vw,76px); }
+/* Events intro split */
+.ev-intro__grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,5vw,80px); align-items:center; }
+.ev-intro__img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:24px; box-shadow:var(--sh-img); }
+.ev-intro__copy { display:flex; flex-direction:column; gap:20px; }
+
+/* Work-types grid */
+.work-cards-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+
+/* Event booking cards */
+.ev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.ev-card { background:var(--cream); border:1px solid rgba(22,39,63,.08); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
+.ev-card__img { width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--sand); }
+.ev-card__img-placeholder { width:100%; aspect-ratio:16/9; background:var(--sand); display:flex; align-items:center; justify-content:center; }
+.ev-card__body { padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.ev-card__date { display:flex; gap:10px; align-items:center; }
+.ev-card__month { font-size:11px; text-transform:uppercase; letter-spacing:.18em; font-weight:600; color:var(--muted); }
+.ev-card__day { font-family:var(--serif); font-size:28px; font-weight:400; color:var(--forest); line-height:1; }
+.ev-card__cat { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.15em; }
+.ev-card__title { font-size:17px; font-weight:600; color:var(--ink); line-height:1.3; }
+.ev-card__meta { font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:3px; }
+.ev-card__price { font-size:16px; font-weight:700; color:var(--forest); }
+.ev-card__btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; margin-top:auto; padding:12px; background:var(--forest); color:var(--cream); border-radius:12px; text-decoration:none; font-size:14px; font-weight:600; }
+.ev-card__btn:hover { background:var(--olive); }
+
+/* Offerings grid */
+.offerings-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.offering-card { background:var(--cream); border:1px solid rgba(22,39,63,.07); border-radius:16px; overflow:hidden; text-decoration:none; display:flex; flex-direction:column; }
+.offering-card__img { width:100%; aspect-ratio:3/2; object-fit:cover; background:var(--sand); }
+.offering-card__img-placeholder { width:100%; aspect-ratio:3/2; background:var(--sand); display:flex; align-items:center; justify-content:center; font-size:28px; }
+.offering-card__label { padding:14px 16px; font-size:14px; font-weight:600; color:var(--ink); }
+
+/* Past events */
+.past-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.past-card { aspect-ratio:3/4; background:var(--sand); border-radius:12px; cursor:pointer; overflow:hidden; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; }
+
+@media (max-width:1100px) {
+  .work-cards-grid, .offerings-grid { grid-template-columns:repeat(2,1fr); }
+  .ev-grid { grid-template-columns:repeat(2,1fr); }
+  .past-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:960px) {
+  .ev-intro__grid { grid-template-columns:1fr; }
+  .ev-intro__img { max-width:480px; }
+}
+@media (max-width:640px) {
+  .ev-grid, .work-cards-grid, .past-grid { grid-template-columns:1fr; }
+  .offerings-grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="Creative Coaching International home">
+      <img src="images/creative-coaching-international-logo.png" alt="" class="site-header__logo-img" width="56" height="56">
+      <div class="site-header__logo-text">
+        <span class="site-header__logo-name">Creative Coaching</span>
+        <span class="site-header__logo-sub">International</span>
+      </div>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          About <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
+          <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
+          <a href="about.html#career"   class="dropdown__item" role="menuitem">Career</a>
+          <a href="about.html#mission"  class="dropdown__item" role="menuitem">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
+          <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
+          <a href="relationships.html"  class="dropdown__item" role="menuitem">Relationships</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link active" aria-haspopup="true" aria-expanded="false">
+          Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
+          <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
+          <a href="events.html#offerings" class="dropdown__item" role="menuitem">Ways to Gather</a>
+          <a href="events.html#past"      class="dropdown__item" role="menuitem">Past Events</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html"      class="nav-link">Contact</a>
+    </nav>
+    <a href="#book" class="btn btn-dark site-header__cta">Book an event</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__brand">Creative Coaching</span>
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-menu__nav">
+    <a href="index.html"         class="mobile-menu__link">Home</a>
+    <a href="about.html"         class="mobile-menu__link">About</a>
+    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
+    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+  </nav>
+  <a href="#book" class="mobile-menu__cta">Book an upcoming event</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="images/womens-life-coaching-support.jpeg" alt="Women's wellness retreat" class="page-hero__img">
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__body">
+    <p class="eyebrow page-hero__eyebrow eyebrow--light">Gather &amp; grow</p>
+    <h1 class="page-hero__title">Events &amp; Retreats</h1>
+    <p class="page-hero__sub">Coaching doesn't only happen one-to-one. Come together for walks, trips, and gatherings designed to help you reconnect — with yourself and with other women on the journey.</p>
+  </div>
+</div>
+
+<!-- RETREATS INTRO -->
+<section id="retreats" class="section-pad" style="background:var(--cream);" aria-labelledby="retreats-heading">
+  <div class="container">
+    <div class="ev-intro__grid">
+      <div>
+        <img src="images/womens-wellness-retreat-group.jpeg" alt="Women's wellness retreat group" class="ev-intro__img">
+      </div>
+      <div class="ev-intro__copy">
+        <p class="eyebrow">The offering</p>
+        <h2 class="h-section" id="retreats-heading">Space to slow down <em class="h-em">and reset</em>.</h2>
+        <p class="body-lg">Intimate getaways and workshops built around real rest, real connection, and tools that travel home with you. No agenda — just space to breathe, reflect, and realign.</p>
+        <p class="body-lg">From sailing days and wellness retreats to community gatherings and organizational programs, every event is designed to deepen the journey.</p>
+        <a href="#book" class="btn btn-dark" style="align-self:flex-start;">View upcoming events →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYS WE GATHER (WORK TYPES) -->
+<section class="section-pad" style="background:var(--forest);" aria-labelledby="ways-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,56px);">
+      <p class="eyebrow eyebrow--light" style="margin-bottom:12px;">Ways we gather</p>
+      <h2 class="h-section" id="ways-heading" style="color:var(--cream);">Every kind of <em class="h-em--light">experience</em>.</h2>
+    </div>
+    <div class="work-cards-grid">
+      <div class="dark-card">
+        <span style="font-family:var(--serif);font-style:italic;font-size:18px;color:var(--clay2);display:block;margin-bottom:10px;">01</span>
+        <h3 class="dark-card__title">Group retreats</h3>
+        <p class="dark-card__body">Intimate getaways to slow down, reconnect, and reset — together.</p>
+      </div>
+      <div class="dark-card">
+        <span style="font-family:var(--serif);font-style:italic;font-size:18px;color:var(--clay2);display:block;margin-bottom:10px;">02</span>
+        <h3 class="dark-card__title">Workshops</h3>
+        <p class="dark-card__body">Focused sessions on wellbeing, mindset, and resilience for teams and groups.</p>
+      </div>
+      <div class="dark-card">
+        <span style="font-family:var(--serif);font-style:italic;font-size:18px;color:var(--clay2);display:block;margin-bottom:10px;">03</span>
+        <h3 class="dark-card__title">Community gatherings</h3>
+        <p class="dark-card__body">Walks, trips, and events that bring women together throughout the year.</p>
+      </div>
+      <div class="dark-card">
+        <span style="font-family:var(--serif);font-style:italic;font-size:18px;color:var(--clay2);display:block;margin-bottom:10px;">04</span>
+        <h3 class="dark-card__title">Organizational programs</h3>
+        <p class="dark-card__body">Whole-person wellbeing brought to schools, municipalities, and teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK AN EVENT -->
+<section id="book" class="section-pad" style="background:var(--cream2);" aria-labelledby="book-heading">
+  <div class="container">
+    <div style="margin-bottom:clamp(32px,4vw,48px);">
+      <p class="eyebrow" style="margin-bottom:12px;">Reserve your spot</p>
+      <h2 class="h-section" id="book-heading">Book an upcoming event.</h2>
+    </div>
+    <div class="ev-grid">
+
+      <!-- Event 1: Calm Your Body, Heal Your Mind -->
+      <article class="ev-card">
+        <div class="ev-card__img-placeholder" aria-hidden="true"></div>
+        <div class="ev-card__body">
+          <div class="ev-card__date">
+            <div>
+              <div class="ev-card__month">Aug</div>
+              <div class="ev-card__day">18</div>
+            </div>
+            <div>
+              <div class="ev-card__cat">Reiki · Healing</div>
+              <div class="ev-card__title">Calm Your Body, Heal Your Mind</div>
+            </div>
+          </div>
+          <div class="ev-card__meta">
+            <span>◷ 6:30–7:30 PM</span>
+            <span>◈ Tuesday, August 18, 2026</span>
+            <span>⌖ SuperJuice, Wyckoff, NJ</span>
+          </div>
+          <div class="ev-card__price">$40</div>
+          <a href="event.html?e=calm-your-body-heal-your-mind" class="ev-card__btn">View &amp; register →</a>
+        </div>
+      </article>
+
+      <!-- Event 2: Find Your Focus -->
+      <article class="ev-card">
+        <img src="images/find-your-focus-relax-retreat.jpeg" alt="Find Your Focus &amp; Relax" class="ev-card__img">
+        <div class="ev-card__body">
+          <div class="ev-card__date">
+            <div>
+              <div class="ev-card__month">Jun</div>
+              <div class="ev-card__day">20</div>
+            </div>
+            <div>
+              <div class="ev-card__cat">Wine · Wellness</div>
+              <div class="ev-card__title">Find Your Focus &amp; Relax</div>
+            </div>
+          </div>
+          <div class="ev-card__meta">
+            <span>◷ 1:00–4:00 PM</span>
+            <span>◈ Saturday, June 20</span>
+            <span>⌖ Forked River Sailing Charter, NJ</span>
+          </div>
+          <div class="ev-card__price">$225</div>
+          <a href="event.html?e=find-your-focus" class="ev-card__btn">View &amp; register →</a>
+        </div>
+      </article>
+
+      <!-- Event 3: Wellness on a Boat -->
+      <article class="ev-card">
+        <img src="images/wellness-for-women-boat-event.jpeg" alt="Wellness for Women on a Boat" class="ev-card__img">
+        <div class="ev-card__body">
+          <div class="ev-card__date">
+            <div>
+              <div class="ev-card__month">Jun</div>
+              <div class="ev-card__day">13</div>
+            </div>
+            <div>
+              <div class="ev-card__cat">On the water</div>
+              <div class="ev-card__title">Wellness for Women — On a Boat!</div>
+            </div>
+          </div>
+          <div class="ev-card__meta">
+            <span>◷ 1:00–4:00 PM</span>
+            <span>◈ Saturday, June 13</span>
+            <span>⌖ Aboard a private charter, NJ</span>
+          </div>
+          <div class="ev-card__price">$200</div>
+          <a href="event.html?e=wellness-on-a-boat" class="ev-card__btn">View &amp; register →</a>
+        </div>
+      </article>
+
+      <!-- Event 4: Wyckoff Wellness -->
+      <article class="ev-card">
+        <img src="images/wyckoff-health-wellness-event.jpeg" alt="Wyckoff Health &amp; Wellness Event" class="ev-card__img">
+        <div class="ev-card__body">
+          <div class="ev-card__date">
+            <div>
+              <div class="ev-card__month">Jun</div>
+              <div class="ev-card__day">06</div>
+            </div>
+            <div>
+              <div class="ev-card__cat">Health &amp; Wellness</div>
+              <div class="ev-card__title">Wyckoff Health &amp; Wellness Event</div>
+            </div>
+          </div>
+          <div class="ev-card__meta">
+            <span>◷ 10:00 AM–2:00 PM</span>
+            <span>◈ Saturday, June 6</span>
+            <span>⌖ Wyckoff, NJ</span>
+          </div>
+          <div class="ev-card__price">$40</div>
+          <a href="event.html?e=wyckoff-wellness" class="ev-card__btn">View &amp; register →</a>
+        </div>
+      </article>
+
+      <!-- Event 5: Mindset Through Dance -->
+      <article class="ev-card">
+        <img src="images/motivation-mindset-dance-event.jpeg" alt="Motivation &amp; Mindset Through Dance" class="ev-card__img">
+        <div class="ev-card__body">
+          <div class="ev-card__date">
+            <div>
+              <div class="ev-card__month">May</div>
+              <div class="ev-card__day">09</div>
+            </div>
+            <div>
+              <div class="ev-card__cat">Motivation · Movement</div>
+              <div class="ev-card__title">Motivation &amp; Mindset Through Dance</div>
+            </div>
+          </div>
+          <div class="ev-card__meta">
+            <span>◷ 1:00–2:00 PM</span>
+            <span>◈ Saturday, May 9</span>
+            <span>⌖ Saucy Studios</span>
+          </div>
+          <div class="ev-card__price">$20</div>
+          <a href="event.html?e=mindset-through-dance" class="ev-card__btn">View &amp; register →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAYS TO GATHER (OFFERINGS) -->
+<section id="offerings" class="section-pad" style="background:var(--cream);" aria-labelledby="offerings-heading">
+  <div class="container">
+    <div style="margin-bottom:clamp(32px,4vw,48px);">
+      <p class="eyebrow" style="margin-bottom:12px;">Ways to gather</p>
+      <h2 class="h-section" id="offerings-heading">Experiences we create <em class="h-em">together</em>.</h2>
+      <p class="body-lg" style="max-width:540px;">From sunrise meditations to sailing days — a growing collection of ways to slow down, connect, and show up for your life.</p>
+    </div>
+    <div class="offerings-grid">
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">⛵</div>
+        <span class="offering-card__label">Sailing Trips</span>
+      </div>
+      <a href="#book" class="offering-card">
+        <img src="images/new-york-city-womens-trip.jpeg" alt="NYC Women's Trip" class="offering-card__img">
+        <span class="offering-card__label">NYC Trips</span>
+      </a>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🍷</div>
+        <span class="offering-card__label">Dining Experiences</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🎯</div>
+        <span class="offering-card__label">Vision Board Adventures</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🏋️</div>
+        <span class="offering-card__label">Gym Experience</span>
+      </div>
+      <a href="#book" class="offering-card">
+        <img src="images/hamptons-film-festival-event.jpeg" alt="Hampton Film Festival" class="offering-card__img">
+        <span class="offering-card__label">Hampton Film Festival</span>
+      </a>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🚣</div>
+        <span class="offering-card__label">Kayak Trips</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🌻</div>
+        <span class="offering-card__label">Sunflower Walks</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🥾</div>
+        <span class="offering-card__label">Hiking Trips</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🌅</div>
+        <span class="offering-card__label">Early Morning Meditation</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🚙</div>
+        <span class="offering-card__label">Off-Road Jeep Trips</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🚢</div>
+        <span class="offering-card__label">Cruise Ships</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">💃</div>
+        <span class="offering-card__label">Dancing Classes</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🏖️</div>
+        <span class="offering-card__label">Deerfield Beach Retreat</span>
+      </div>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">⛳</div>
+        <span class="offering-card__label">Golfing Adventures</span>
+      </div>
+      <a href="#book" class="offering-card">
+        <img src="images/naples-botanical-gardens-retreat.jpeg" alt="Naples FL Botanical Gardens" class="offering-card__img">
+        <span class="offering-card__label">Naples FL Botanical Gardens</span>
+      </a>
+      <div class="offering-card">
+        <div class="offering-card__img-placeholder" aria-hidden="true">🧖</div>
+        <span class="offering-card__label">Oasis Day Spa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST EVENTS -->
+<section id="past" class="section-pad" style="background:var(--cream2);" aria-labelledby="past-heading">
+  <div class="container">
+    <div style="margin-bottom:clamp(32px,4vw,48px);">
+      <p class="eyebrow" style="margin-bottom:12px;">Look back</p>
+      <h2 class="h-section" id="past-heading">Past events.</h2>
+    </div>
+    <div class="past-grid">
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+      <div class="past-card" tabindex="0" role="button" aria-label="Past event flyer">Event flyer</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <p class="eyebrow cta-band__eyebrow eyebrow--light">Come along</p>
+  <h2 class="cta-band__title">Want to host or suggest an <em class="h-em--light">experience?</em></h2>
+  <p class="cta-band__sub">Whether you'd like to join an upcoming gathering or bring one to your own circle or workplace, let's talk.</p>
+  <div class="cta-band__btns">
+    <a href="contact.html" class="btn btn-gold">Get in touch →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <div class="site-footer__logo">
+        <img src="images/creative-coaching-international-logo-white.png" alt="Creative Coaching International logo" class="site-footer__logo-img" width="60" height="60">
+        <div class="site-footer__logo-text">
+          <span class="site-footer__logo-name">Creative Coaching</span>
+          <span class="site-footer__logo-sub">International</span>
+        </div>
+      </div>
+      <p class="site-footer__tagline">Whole-person coaching for women, teams, and communities — body, mind, career, and connection.</p>
+      <a href="https://www.instagram.com/creativecoachinginternational/" target="_blank" rel="noopener" class="site-footer__ig-btn" aria-label="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Services &amp; Events</p>
+      <ul class="site-footer__col-links">
+        <li><a href="wellness.html"      class="site-footer__link">Wellness &amp; Fitness</a></li>
+        <li><a href="schools.html"       class="site-footer__link">Municipalities &amp; Schools</a></li>
+        <li><a href="relationships.html" class="site-footer__link">Relationships</a></li>
+        <li><a href="events.html"        class="site-footer__link">Events &amp; Retreats</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Quick Links</p>
+      <ul class="site-footer__col-links">
+        <li><a href="about.html"        class="site-footer__link">About</a></li>
+        <li><a href="testimonials.html" class="site-footer__link">Testimonials</a></li>
+        <li><a href="contact.html"      class="site-footer__link">Contact</a></li>
+        <li><a href="terms.html"        class="site-footer__link">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Connect</p>
+      <a href="tel:+12018887807" class="site-footer__phone-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        201-888-7807
+      </a>
+      <p class="site-footer__connect-info">Call to get started — virtual &amp; in person, nationwide.</p>
+    </div>
+  </div>
+  <div class="site-footer__offices">
+    <p class="site-footer__offices-label">Offices</p>
+    <div class="site-footer__offices-grid">
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>385 Ocean Ave.<br>Long Branch, NJ 07740</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1266 E Main St, Suite 700R<br>Stamford, CT 06902</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1 Park Ave.<br>New York, NY 10016</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1000 Wyckoff Ave, 3rd Floor<br>Mahwah, NJ 07430</span></div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p class="site-footer__copy">&copy; 2026 Creative Coaching International. All rights reserved.</p>
+    <span style="display:inline-flex;align-items:center;gap:16px;">
+      <a href="terms.html" class="site-footer__terms">Terms of Service</a>
+      <span style="opacity:.5;font-size:13px;">Coaching · Retreats · Wellbeing partnerships</span>
+    </span>
+  </div>
+</footer>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Event flyer"><button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button><img class="lightbox-img" id="lightboxImg" src="" alt="Event flyer"></div>
+<script src="cci-main.js"></script>
+</body>
+</html>

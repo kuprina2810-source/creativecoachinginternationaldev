@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Creative Coaching International</title>
+<meta name="description" content="Meet Christine Verdun Roeser — holistic life coach for women. 15+ years guiding women toward whole-person transformation.">
+<meta property="og:title" content="About — Creative Coaching International">
+<meta property="og:image" content="images/meet-christine-life-coach.jpeg">
+<link rel="stylesheet" href="cci-styles.css">
+<style>
+.about-split { display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,5vw,72px); align-items:center; }
+.about-img { width:100%; height:clamp(440px,44vw,540px); object-fit:cover; border-radius:24px; box-shadow:0 30px 60px -34px rgba(15,30,54,.4); }
+.about-copy { display:flex; flex-direction:column; gap:20px; }
+/* Process cards */
+.process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-top:22px; }
+.process-card { background:var(--cream); border:1px solid rgba(22,39,63,.08); border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; box-shadow:0 20px 44px -30px rgba(15,30,54,.4); }
+.process-card:hover { transform:translateY(-3px); box-shadow:0 28px 52px -28px rgba(15,30,54,.45); }
+.process-card__num { width:48px; height:48px; border-radius:14px; background:var(--clay); color:var(--forest); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-size:22px; flex-shrink:0; }
+.process-card__title { font-family:var(--serif); font-weight:500; font-size:22px; color:var(--ink); }
+.process-card__body { font-size:14.5px; line-height:1.6; color:var(--muted); }
+/* Mission quote */
+.mission-sep { width:34px; height:1.5px; background:var(--clay2); display:inline-block; }
+@media (max-width:960px) {
+  .about-split { grid-template-columns:1fr; }
+  .about-img { height:clamp(320px,50vw,480px); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="Creative Coaching International home">
+      <img src="images/creative-coaching-international-logo.png" alt="" class="site-header__logo-img" width="56" height="56">
+      <div class="site-header__logo-text">
+        <span class="site-header__logo-name">Creative Coaching</span>
+        <span class="site-header__logo-sub">International</span>
+      </div>
+    </a>
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link active" aria-haspopup="true" aria-expanded="false">
+          About <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
+          <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
+          <a href="about.html#career"   class="dropdown__item" role="menuitem">Career</a>
+          <a href="about.html#mission"  class="dropdown__item" role="menuitem">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
+          <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
+          <a href="relationships.html"  class="dropdown__item" role="menuitem">Relationships</a>
+        </div>
+      </div>
+      <div class="dropdown" role="none">
+        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+          Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
+          <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
+          <a href="events.html#offerings" class="dropdown__item" role="menuitem">Ways to Gather</a>
+          <a href="events.html#past"      class="dropdown__item" role="menuitem">Past Events</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html"      class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-dark site-header__cta">Free consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__brand">Creative Coaching</span>
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-menu__nav">
+    <a href="index.html"         class="mobile-menu__link">Home</a>
+    <a href="about.html"         class="mobile-menu__link">About</a>
+    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
+    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+  </nav>
+  <a href="contact.html" class="mobile-menu__cta">Book a free 15-min consultation</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="images/womens-life-coaching-support.jpeg" alt="Christine, life coach for women" class="page-hero__img">
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__body">
+    <p class="eyebrow page-hero__eyebrow eyebrow--light">About</p>
+    <h1 class="page-hero__title">Meet <em style="color:var(--clay2);font-style:italic;">Christine</em></h1>
+    <p class="page-hero__sub">Coaching women toward a whole, resilient life.</p>
+  </div>
+</div>
+
+<!-- ABOUT US -->
+<section id="aboutus" class="section-pad" style="background:var(--cream);" aria-labelledby="aboutus-heading">
+  <div class="container">
+    <!-- Split: image LEFT, copy RIGHT -->
+    <div class="about-split" style="margin-bottom:clamp(28px,4vw,40px);">
+      <div>
+        <img src="images/coaching-women-group-outing.jpeg" alt="Women's group coaching outing" class="about-img">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About us</p>
+        <h2 class="h-section" id="aboutus-heading">How we work <em class="h-em">together</em>.</h2>
+        <p class="body-lg">Creative Coaching offers a range of programs for women across wellness &amp; fitness, career, and relationships — always with a holistic approach that supports mind, body, and spirit.</p>
+        <p class="body-lg">Our approach also has a social side many clients love: group outings like hiking, kayaking, dancing, and dining, plus a growing travel club for members who want to explore new destinations together.</p>
+        <p style="font-size:13.5px;letter-spacing:.02em;color:var(--muted);">Offices in Long Branch, NJ · Stamford, CT · New York, NY · Mahwah, NJ</p>
+      </div>
+    </div>
+    <!-- Process cards — full width below the split -->
+    <div style="padding-top:clamp(16px,2vw,24px);">
+      <p class="eyebrow">The process</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="process-card__num" aria-hidden="true">01</span>
+          <h3 class="process-card__title">Apply</h3>
+          <p class="process-card__body">A short survey to see if we're the right match.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-card__num" aria-hidden="true">02</span>
+          <h3 class="process-card__title">Connect</h3>
+          <p class="process-card__body">A 15-minute Zoom within 72 hours of your results.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-card__num" aria-hidden="true">03</span>
+          <h3 class="process-card__title">Choose your path</h3>
+          <p class="process-card__body">Choose the program that fits — 6 weeks to 6 months, on a flexible schedule.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-card__num" aria-hidden="true">04</span>
+          <h3 class="process-card__title">Grow together</h3>
+          <p class="process-card__body">Grow alongside others through group outings and our travel club.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio" class="section-pad" style="background:var(--cream2);border-top:1px solid rgba(22,39,63,.08);border-bottom:1px solid rgba(22,39,63,.08);" aria-labelledby="bio-heading">
+  <div class="container">
+    <!-- Split: copy LEFT, image RIGHT -->
+    <div class="about-split">
+      <div class="about-copy">
+        <p class="eyebrow">Bio</p>
+        <h2 class="h-section" id="bio-heading">Meet Christine <em class="h-em">Verdun Roeser</em>.</h2>
+        <p class="body-lg">I bring a holistic approach that weaves together body, mind, and spirit — because lasting change touches every part of a life. My passion is helping people become the best version of themselves, with goal-setting, accountability, and empowerment built into every program.</p>
+        <p class="body-lg">I hold a degree in Sociology and Communications from Rutgers College, along with certifications in personal training and life coaching. My background spans start-ups to global corporate organizations — and above all, I love to inspire and motivate others.</p>
+        <div class="stats-row" aria-label="Key statistics">
+          <div class="stat-chip">
+            <div class="stat-chip__num">15+</div>
+            <div class="stat-chip__label">Years coaching</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-chip__num">500+</div>
+            <div class="stat-chip__label">Women guided</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-chip__num">20+</div>
+            <div class="stat-chip__label">Retreats led</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="images/meet-christine-life-coach.jpeg" alt="Christine Verdun Roeser, life coach" class="about-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career" class="section-pad" style="background:var(--cream);" aria-labelledby="career-heading">
+  <div class="container">
+    <!-- Split: image LEFT, copy RIGHT -->
+    <div class="about-split">
+      <div>
+        <img src="images/career-coaching-for-women.webp" alt="Career coaching for women" class="about-img">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">Career</p>
+        <h2 class="h-section" id="career-heading">Move forward with <em class="h-em">clarity</em> and purpose.</h2>
+        <p class="body-lg">Whether you're navigating a transition, stepping into leadership, or searching for work that finally feels like yours, career coaching helps you get unstuck and move forward with intention.</p>
+        <p class="body-lg">Drawing on experience across start-ups and global organizations, we'll clarify your goals, rebuild your confidence, and map a practical plan for your next chapter — on your terms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission" class="section-pad" style="background:var(--forest);color:var(--cream);" aria-labelledby="mission-heading">
+  <div class="container" style="max-width:900px;text-align:center;">
+    <p style="text-transform:uppercase;letter-spacing:.2em;font-size:12.5px;font-weight:600;color:var(--clay2);margin-bottom:24px;">Mission</p>
+    <h2 class="sr-only" id="mission-heading">Mission</h2>
+    <blockquote style="font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(20px,2.5vw,32px);line-height:1.42;letter-spacing:-.01em;color:var(--cream);margin:0 0 28px;">"As a former cheerleader, I promise to encourage you every step of the way. My aim is to help each person fully realize their potential and gain self-love — because it is only through self-love that we grow, learn, and become who we were meant to be. I help uncover each individual's unique talents and gifts while gently showing areas to grow, so we can each bring our most loving, joyful, disciplined self to the world."</blockquote>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+      <span class="mission-sep" aria-hidden="true"></span>
+      <span style="font-size:15px;letter-spacing:.04em;color:var(--clay2);">Christine Verdun Roeser</span>
+      <span class="mission-sep" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:clamp(48px,7vw,96px) clamp(16px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;background:var(--forest);color:var(--cream);border-radius:32px;padding:clamp(44px,6vw,80px) clamp(28px,5vw,72px);text-align:center;position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-90px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(243,217,138,.3),transparent 70%);pointer-events:none;"></div>
+    <p style="position:relative;text-transform:uppercase;letter-spacing:.2em;font-size:12.5px;font-weight:600;color:var(--clay2);margin:0 0 18px;">Let's begin</p>
+    <h2 style="position:relative;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.2vw,54px);line-height:1.08;letter-spacing:-.02em;color:var(--cream);margin:0 auto;max-width:15em;">Ready to see what whole-person coaching feels like?</h2>
+    <a href="contact.html" style="position:relative;display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:var(--clay);color:var(--forest);text-decoration:none;padding:18px 34px;border-radius:999px;font-weight:600;font-size:17px;box-shadow:0 16px 34px -14px rgba(0,0,0,.5);">Book a free consultation →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <div class="site-footer__logo">
+        <img src="images/creative-coaching-international-logo-white.png" alt="Creative Coaching International logo" class="site-footer__logo-img" width="60" height="60">
+        <div class="site-footer__logo-text">
+          <span class="site-footer__logo-name">Creative Coaching</span>
+          <span class="site-footer__logo-sub">International</span>
+        </div>
+      </div>
+      <p class="site-footer__tagline">Whole-person coaching for women, teams, and communities — body, mind, career, and connection.</p>
+      <a href="https://www.instagram.com/creativecoachinginternational/" target="_blank" rel="noopener" class="site-footer__ig-btn" aria-label="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Services &amp; Events</p>
+      <ul class="site-footer__col-links">
+        <li><a href="wellness.html"      class="site-footer__link">Wellness &amp; Fitness</a></li>
+        <li><a href="schools.html"       class="site-footer__link">Municipalities &amp; Schools</a></li>
+        <li><a href="relationships.html" class="site-footer__link">Relationships</a></li>
+        <li><a href="events.html"        class="site-footer__link">Events &amp; Retreats</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Quick Links</p>
+      <ul class="site-footer__col-links">
+        <li><a href="about.html"        class="site-footer__link">About</a></li>
+        <li><a href="testimonials.html" class="site-footer__link">Testimonials</a></li>
+        <li><a href="contact.html"      class="site-footer__link">Contact</a></li>
+        <li><a href="terms.html"        class="site-footer__link">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="site-footer__col-title">Connect</p>
+      <a href="tel:+12018887807" class="site-footer__phone-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        201-888-7807
+      </a>
+      <p class="site-footer__connect-info">Call to get started — virtual &amp; in person, nationwide.</p>
+    </div>
+  </div>
+  <div class="site-footer__offices">
+    <p class="site-footer__offices-label">Offices</p>
+    <div class="site-footer__offices-grid">
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>385 Ocean Ave.<br>Long Branch, NJ 07740</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1266 E Main St, Suite 700R<br>Stamford, CT 06902</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1 Park Ave.<br>New York, NY 10016</span></div>
+      <div class="site-footer__office"><span class="site-footer__office-marker">⌖</span><span>1000 Wyckoff Ave, 3rd Floor<br>Mahwah, NJ 07430</span></div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p class="site-footer__copy">&copy; 2026 Creative Coaching International. All rights reserved.</p>
+    <span style="display:inline-flex;align-items:center;gap:16px;">
+      <a href="terms.html" class="site-footer__terms">Terms of Service</a>
+      <span style="opacity:.5;font-size:13px;">Coaching · Retreats · Wellbeing partnerships</span>
+    </span>
+  </div>
+</footer>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image lightbox"><button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button><img class="lightbox-img" id="lightboxImg" src="" alt=""></div>
+<script src="cci-main.js"></script>
+</body>
+</html>
