@@ -311,9 +311,9 @@
     </a>
     <nav class="site-header__nav" aria-label="Primary navigation">
       <div class="dropdown" role="none">
-        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+        <a href="about.html" class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
           About <span class="dropdown__arrow" aria-hidden="true">▾</span>
-        </button>
+        </a>
         <div class="dropdown__menu" role="menu">
           <a href="about.html#aboutus"  class="dropdown__item" role="menuitem">About Us</a>
           <a href="about.html#bio"      class="dropdown__item" role="menuitem">Bio</a>
@@ -322,9 +322,9 @@
         </div>
       </div>
       <div class="dropdown" role="none">
-        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+        <a href="index.html#services" class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
           Services <span class="dropdown__arrow" aria-hidden="true">▾</span>
-        </button>
+        </a>
         <div class="dropdown__menu" role="menu">
           <a href="wellness.html"       class="dropdown__item" role="menuitem">Wellness &amp; Fitness</a>
           <a href="schools.html"        class="dropdown__item" role="menuitem">Municipalities &amp; Schools</a>
@@ -332,9 +332,9 @@
         </div>
       </div>
       <div class="dropdown" role="none">
-        <button class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
+        <a href="events.html" class="dropdown__toggle nav-link" aria-haspopup="true" aria-expanded="false">
           Events &amp; Retreats <span class="dropdown__arrow" aria-hidden="true">▾</span>
-        </button>
+        </a>
         <div class="dropdown__menu" role="menu">
           <a href="events.html#retreats"  class="dropdown__item" role="menuitem">Retreats &amp; Workshops</a>
           <a href="events.html#book"      class="dropdown__item" role="menuitem">Book an Event</a>
@@ -359,14 +359,48 @@
     <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
   </div>
   <nav class="mobile-menu__nav">
-    <a href="index.html"         class="mobile-menu__link">Home</a>
-    <a href="about.html"         class="mobile-menu__link">About</a>
-    <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
-    <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
-    <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
-    <a href="events.html"        class="mobile-menu__link">Events &amp; Retreats</a>
-    <a href="testimonials.html"  class="mobile-menu__link">Testimonials</a>
-    <a href="contact.html"       class="mobile-menu__link">Contact</a>
+    <a href="index.html" class="mobile-menu__link">Home</a>
+
+    <div class="mobile-acc">
+      <div class="mobile-acc__row">
+        <a href="about.html" class="mobile-menu__link">About</a>
+        <button type="button" class="mobile-acc__toggle" aria-expanded="false" aria-label="Toggle About submenu">▾</button>
+      </div>
+      <div class="mobile-acc__panel">
+        <a href="about.html#aboutus" class="mobile-menu__sub">— About Us</a>
+        <a href="about.html#bio"     class="mobile-menu__sub">— Bio</a>
+        <a href="about.html#career"  class="mobile-menu__sub">— Career</a>
+        <a href="about.html#mission" class="mobile-menu__sub">— Mission</a>
+      </div>
+    </div>
+
+    <div class="mobile-acc">
+      <div class="mobile-acc__row">
+        <a href="index.html#services" class="mobile-menu__link">Services</a>
+        <button type="button" class="mobile-acc__toggle" aria-expanded="false" aria-label="Toggle Services submenu">▾</button>
+      </div>
+      <div class="mobile-acc__panel">
+        <a href="wellness.html"      class="mobile-menu__sub">— Wellness &amp; Fitness</a>
+        <a href="schools.html"       class="mobile-menu__sub">— Municipalities &amp; Schools</a>
+        <a href="relationships.html" class="mobile-menu__sub">— Relationships</a>
+      </div>
+    </div>
+
+    <div class="mobile-acc">
+      <div class="mobile-acc__row">
+        <a href="events.html" class="mobile-menu__link">Events &amp; Retreats</a>
+        <button type="button" class="mobile-acc__toggle" aria-expanded="false" aria-label="Toggle Events &amp; Retreats submenu">▾</button>
+      </div>
+      <div class="mobile-acc__panel">
+        <a href="events.html#retreats"  class="mobile-menu__sub">— Retreats &amp; Workshops</a>
+        <a href="events.html#book"      class="mobile-menu__sub">— Book an Event</a>
+        <a href="events.html#offerings" class="mobile-menu__sub">— Ways to Gather</a>
+        <a href="events.html#past"      class="mobile-menu__sub">— Past Events</a>
+      </div>
+    </div>
+
+    <a href="testimonials.html" class="mobile-menu__link">Testimonials</a>
+    <a href="contact.html"      class="mobile-menu__link">Contact</a>
   </nav>
   <a href="contact.html" class="mobile-menu__cta">Book a free 15-min consultation</a>
 </div>

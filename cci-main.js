@@ -30,32 +30,29 @@
     if (e.key === 'Escape') closeMenu();
   });
 
-  /* ── Dropdown keyboard/click support ── */
+  /* ── Mobile menu accordions (About / Services / Events & Retreats) ── */
+  document.querySelectorAll('.mobile-acc__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const acc = btn.closest('.mobile-acc');
+      if (!acc) return;
+      const open = acc.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ── Dropdown aria-expanded tracking (hover/focus open the menu via CSS) ── */
   document.querySelectorAll('.dropdown').forEach(dd => {
     const toggle = dd.querySelector('.dropdown__toggle');
     const menu   = dd.querySelector('.dropdown__menu');
     if (!toggle || !menu) return;
 
-    toggle.addEventListener('click', () => {
-      const open = dd.classList.toggle('dropdown--open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    const setExpanded = open => toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 
-    // Close when clicking outside
-    document.addEventListener('click', e => {
-      if (!dd.contains(e.target)) {
-        dd.classList.remove('dropdown--open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Keyboard: Escape closes; Tab past last item closes
-    toggle.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        dd.classList.toggle('dropdown--open');
-        toggle.setAttribute('aria-expanded', dd.classList.contains('dropdown--open') ? 'true' : 'false');
-      }
+    dd.addEventListener('mouseenter', () => setExpanded(true));
+    dd.addEventListener('mouseleave', () => setExpanded(false));
+    dd.addEventListener('focusin', () => setExpanded(true));
+    dd.addEventListener('focusout', e => {
+      if (!dd.contains(e.relatedTarget)) setExpanded(false);
     });
   });
 
