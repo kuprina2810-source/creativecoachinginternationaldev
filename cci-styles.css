@@ -1160,7 +1160,20 @@ ul, ol { list-style: none; }
 }
 .lightbox-close:hover { background: rgba(249,249,246,.25); }
 
+.test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.test-card { background:var(--cream); border:1px solid rgba(22,39,63,.07); border-radius:20px; padding:28px; display:flex; flex-direction:column; gap:12px; }
+.test-card__tag { display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:.18em; font-weight:600; color:var(--muted); background:var(--sand); border-radius:999px; padding:4px 10px; align-self:flex-start; }
+.test-card__quote { font-size:15px; line-height:1.7; color:var(--ink); font-style:italic; flex:1; }
+.test-card__footer { display:flex; align-items:center; gap:12px; border-top:1px solid rgba(22,39,63,.06); padding-top:14px; }
+.test-card__avatar { width:36px; height:36px; border-radius:50%; background:var(--forest); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; flex-shrink:0; }
+.test-card__name { font-size:14px; font-weight:600; color:var(--forest); }
+.test-card__role { font-size:12px; color:var(--muted); }
+
+
+
 /* === RESPONSIVE === */
+@media (max-width:960px) { .test-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px) { .test-grid { grid-template-columns:1fr; } .stats-strip__inner { flex-direction:column; gap:28px; } }
 @media (max-width: 1024px) {
   .site-footer__top {
     grid-template-columns: 1fr 1fr;
