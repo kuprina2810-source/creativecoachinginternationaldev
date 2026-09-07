@@ -85,7 +85,7 @@
     }
 
     function getCount() {
-      return track.querySelectorAll('.tcar-card').length;
+      return track.querySelectorAll('.tcar-card').length-1;
     }
 
     function buildDots() {
